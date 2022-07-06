@@ -1,9 +1,9 @@
 async function fetchData() {
-    const res=await fetch ("https://api.coronavirus.data.gov.uk/v1/data");
+    const res=await fetch ("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-andamento-nazionale/dpc-covid19-ita-andamento-nazionale-latest.csv");
     const record=await res.json();
-    document.getElementById("date").innerHTML=record.data[0].date;
-    document.getElementById("areaName").innerHTML=record.data[0].areaName;
-    document.getElementById("latestBy").innerHTML=record.data[0].latestBy;
-    document.getElementById("deathNew").innerHTML=record.data[0].deathNew;
+    document.getElementById("data").innerHTML=record.data[0].date;
+    document.getElementById("stato").innerHTML=record.data[0].areaName;
+    document.getElementById("totale_positivi").innerHTML=record.data[0].latestBy;
+    document.getElementById("deceduti").innerHTML=record.data[0].deathNew;
 }
 fetchData();
